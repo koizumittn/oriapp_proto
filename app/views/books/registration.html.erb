@@ -1,1 +1,8 @@
-<p>まだ何もありません・・・</p>
+<%= link_to (image_tag(@book.image_url, style: "width: 70px;height: 100px;display: inline-block;")), @book.url %>
+<%= @book.title %>
+<%= form_for @book, url: books_path do |f| %>
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :image_url %>
+  <%= f.hidden_field :url %>
+  <%= f.submit 'この本を登録する！' %>
+<% end %>
