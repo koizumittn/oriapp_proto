@@ -13,19 +13,22 @@ class BooksController < ApplicationController
         response_group: 'ItemAttributes, Images',
         country:  'jp',
         power: "Not kindle"
-      )
+        )
 
       # 本のタイトル,画像URL, 詳細ページURLの取得
       @books = []
       books.items.each do |item|
-        book = BookTest.new(
-          item.get('ItemAttributes/Title'),
-          item.get('LargeImage/URL'),
-          item.get('DetailPageURL'),
-        )
+        book = Book.new(
+          title: item.get('ItemAttributes/Title'),
+          image_url: item.get('LargeImage/URL'),
+          url: item.get('DetailPageURL'),
+          )
         @books << book
       end
     end
+  end
+
+  def registration
   end
 
 end
