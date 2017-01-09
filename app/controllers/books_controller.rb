@@ -29,6 +29,20 @@ class BooksController < ApplicationController
   end
 
   def registration
+    @book = Book.new(registration_params)
   end
 
+  def create
+    binding.pry
+    Book.create(create_params)
+  end
+
+  private
+  def registration_params
+    params.require(:book).permit(:title, :image_url, :url)
+  end
+
+  def create_params
+    params.require(:book).permit(:title, :image_url, :url)
+  end
 end
