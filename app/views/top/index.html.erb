@@ -1,0 +1,9 @@
+<div class='container'>
+  <% if @books.present? %>
+  <h2>書籍一覧</h2>
+  <div class="row">
+    <!-- 取得した書籍を表示 -->
+    <%= render partial: 'book_list' %>
+  </div>
+  <% end %>
+</div>
