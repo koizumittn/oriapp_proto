@@ -33,8 +33,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    binding.pry
-    Book.create(create_params)
+    @book = Book.create(create_params)
   end
 
   private
