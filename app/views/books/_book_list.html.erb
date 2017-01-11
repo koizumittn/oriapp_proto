@@ -1,6 +1,6 @@
 <% if @books.present? %>
   <% @books.each do |book| %>
-    <div class="col-xs-6">
+    <div class="col-xs-6 col-lg-4">
       <%= link_to (image_tag(book.image_url, style: "width: 70px;height: 100px;display: inline-block;")), book.url %>
       <%= book.title %>
       <%= form_for book, url: books_registration_path do |f| %>
